@@ -1,3 +1,6 @@
+# Nama Iqbal Zahid Abdullah Haris
+# NIM : 23502310013
+
 urutan = 6
 listTebak = []
 kata = 'Software'
