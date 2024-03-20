@@ -12,8 +12,14 @@ kata = kata.lower()
 
 def opening():
   print('Welcome to Hangman')
+  print('Created by The Most Handsome Boy in the World')
+  print('Dezertz x Woeztjin')
+  print('-'*50)
   opsi()
-
+def mainLagi():
+  print('-'*50)
+  print('Mau main lagi?')
+  opsi()
 def opsi():
   while True:
     print('1. Play')
@@ -45,18 +51,22 @@ def main():
   print('Panjang kata adalah ', len(kata), 'huruf')
   global urutan
   while urutan > 0:
+  
   # Variabel untuk menebak
     tebak = input('Tebak huruf :')
     tebak = tebak.lower()
 
   # Pengurangan nyawa untuk tebakan salah
-    if tebak not in listTebak:
+    if tebak not in kata:
       urutan -= 1
       
 
   # Menambahkan tebakan kedalam tebakan
     listTebak.append(tebak)
 
+  # Memanggil fungsu updateText
+    updateText(kata, listTebak, tebak)
+  
   # List untuk menyimpan tebakan
     kosong = ''
     for i in kata:
@@ -65,19 +75,16 @@ def main():
       else:
         kosong += '_'
     print(kosong)
-
-  # Memanggil fungsu updateText
-    updateText(kata, listTebak, tebak)
-    
+    print(' '*50)
   # Info mengenai nyawa
     print('Kamu masih ada', urutan, 'kali lagi')
     if kosong == kata and urutan > 0:
       print('Selamat, kamu menang')
-      break
+      mainLagi()
     elif urutan <= 0:
       print('Kamu kalah karena kehabisan waktu, kata yang benar adalah',
             kata.upper())
-      break
+      mainLagi()
 
 
 opening()
