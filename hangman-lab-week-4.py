@@ -1,5 +1,5 @@
 #################################
-# Hangman template for Lab 3 #
+# Hangman template for Lab 4 #
 # March 27, 2022 #
 # Author: Iqbal Zahid Abdullah Haris #
 # NIM 23502310013 #
