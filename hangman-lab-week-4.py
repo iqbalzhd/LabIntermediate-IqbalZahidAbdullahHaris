@@ -27,11 +27,6 @@ def random_word(word_list, kata_ditebak):
   return b
 
 
-def stop():
-  while True:
-    break
-
-
 def reset_list():
   listTebak.clear()
   return listTebak
@@ -51,23 +46,15 @@ def habis_kata(kata_ditebak):
     print('Sampai jumpa lagi di Hangman Dezertz 2.0')
     sys.exit()
 
-def benar_kata(benar):
-  benar+=1
-  print(f'Kamu sudah menebak {benar} kata')
 
-def salah_kata(salah):
-  salah+=1
-  print(f'Kamu sudah menebak {salah} kata')
-
-
-def mainLagi():
-
-  while True:
-    if len(word_list) > 0:
-      reset_list()
-      print('Kata yang sudah ditebak: ', listTebak)
-    else:
-      habis_kata(kata_ditebak)
+def mainLagi(benar, salah):
+  print('Kamu sudah menebak', benar, 'kata benar')
+  print('Kamu sudah menebak', salah, 'kata salah')
+  if len(word_list) > 0:
+    reset_list()
+    print('Kata yang sudah ditebak: ', kata_ditebak)
+  else:
+    habis_kata(kata_ditebak)
 
 
 
@@ -132,18 +119,20 @@ def main():
     print(kosong)
     print(' ' * 50)
     # Info mengenai nyawa
-
+    global benar
+    global salah 
+    
     if kosong == kata and urutan > 0:
       print('Selamat, kamu menang')
-      benar_kata(benar)
-      mainLagi()
+      benar+=1
+      mainLagi(benar, salah)
       break
 
     elif urutan <= 0:
       print('Kamu kalah karena kehabisan waktu, kata yang benar adalah',
             kata.upper())
-      salah_kata(salah)
-      mainLagi()
+      salah+=1
+      mainLagi(benar, salah)
       break
 
     else:
