@@ -10,7 +10,7 @@ import sys
 
 urutan = 6
 listTebak = []
-word_list = ['g']
+word_list = ['sapi', 'kucing', 'kambing', 'kuda', 'ayam', 'ikan', 'burung']
 kata_ditebak = []
 benar = 0
 salah = 0
