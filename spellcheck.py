@@ -4,7 +4,7 @@ uniqueWords = []
 
 def readfile(file):
   fileJadi = file.read()
-  hasilSplit = fileJadi.split('`~!@#$%^&*()_+-={}:">?<[];,./\|')
+  hasilSplit = fileJadi.split("~!@#$%^&*()_+{}|:")
   return hasilSplit
 
 def wordCount(file):
@@ -31,4 +31,4 @@ def spellcheck(pembanding, target):
 
 # print('Jumlah kata dalam alice.txt: ', wordCount(storyAlice))
 # print('Jumlah kata unik dalam alice.txt: ', uniqueWord(storyAlice))
-print(spellcheck(words, storyAlice))
+print(len(spellcheck(words, storyAlice)))
