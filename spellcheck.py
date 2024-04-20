@@ -4,7 +4,7 @@ uniqueWords = []
 
 def readfile(file):
   fileJadi = file.read()
-  hasilSplit = fileJadi.split("~!@#$%^&*()_+{}|:")
+  hasilSplit = fileJadi.split()
   return hasilSplit
 
 def wordCount(file):
@@ -25,10 +25,11 @@ def spellcheck(pembanding, target):
   for i in range(len(targetJadi)):
     if targetJadi[i] not in pembandingJadi:
       listTypo.append(targetJadi[i])
-  return listTypo
+  jumlahTypo = len(listTypo)
+  return jumlahTypo
       
 
 
-# print('Jumlah kata dalam alice.txt: ', wordCount(storyAlice))
-# print('Jumlah kata unik dalam alice.txt: ', uniqueWord(storyAlice))
-print(len(spellcheck(words, storyAlice)))
+print('Jumlah kata dalam alice.txt: ', wordCount(storyAlice))
+print('Jumlah kata unik dalam alice.txt: ', uniqueWord(storyAlice))
+print("Jumlah kesalahan penulisan/typo pada cerita alice adalah sebanyak : ", spellcheck(words, storyAlice), " kata")
