@@ -1,10 +1,12 @@
-storyAlice = open("./file-io/alice.txt", 'r')
-words = open("./file-io/words.txt", 'r')
+storyAlice = "./file-io/alice.txt"
+words = "./file-io/words.txt"
 uniqueWords = []
 
 def readfile(file):
+  file = open(file, 'r')
   fileJadi = file.read()
   hasilSplit = fileJadi.split()
+  file.close()
   return hasilSplit
 
 def wordCount(file):
